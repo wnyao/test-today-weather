@@ -1,7 +1,11 @@
-import "./styles/App.css";
+import { TodayWeather } from "src/pages/TodayWeather/TodayWeather";
 
 const App = () => {
-  return <div className="container">Hello world</div>;
+  return (
+    <div className="container">
+      <TodayWeather />
+    </div>
+  );
 };
 
 export default App;
