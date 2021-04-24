@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 export const Label = (props) => {
   const { label, ...rest } = props;
+
   return (
     <label className="fw-bold form-label mt-1 me-2" {...rest}>
       {label}
@@ -27,7 +28,6 @@ export const Field = (props) => {
         <div
           className={clsx("fw-bold", {
             "invalid-feedback": error,
-            "valid-feedback": !error,
           })}
         >
           {error}
