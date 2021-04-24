@@ -31,12 +31,12 @@ export const SearchHistory = (props) => {
 
 const History = (props) => {
   const { index, data, onSearch, onDelete } = props;
-  const { city, countryCode, time } = data;
+  const { city, time, weather } = data;
 
   return (
     <div className="d-flex flex-wrap flex-sm-nowrap align-items-center">
       <div className="flex-grow-1">
-        {index + 1}. {capitalize(city)}, {countryCode}
+        {index + 1}. {capitalize(city)}, {weather.sys && weather.sys.country}
       </div>
       <div className="flex-grow-1 text-start text-sm-end">
         <span className="mx-2">{time && dateFormat(time, "hh:MM TT")}</span>

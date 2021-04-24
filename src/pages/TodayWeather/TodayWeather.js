@@ -25,7 +25,7 @@ export const TodayWeather = () => {
         city.trim(),
         countryCode.trim()
       );
-      return { weather, countryCode };
+      return { weather };
     } catch (error) {
       throw error;
     }
@@ -36,12 +36,11 @@ export const TodayWeather = () => {
       setError("");
 
       // get weather data
-      const { weather, countryCode } = await getWeather(values);
+      const { weather } = await getWeather(values);
       setWeather(weather);
 
       // set new history
       const newHistory = {
-        countryCode,
         time: new Date(),
         weather,
         ...values,
