@@ -9,21 +9,19 @@ export const SearchHistory = (props) => {
   return (
     <section>
       <header className="mt-4">
-        <h4 className="fw-bold">Today's Weather</h4>
+        <h4 className="fw-bold">Search History</h4>
       </header>
       <hr />
       <div>
-        {history.map((data, index) => {
-          return (
-            <History
-              data={data}
-              key={index}
-              index={index}
-              onSearch={onSearch}
-              onDelete={onDelete}
-            />
-          );
-        })}
+        {history.map((data, index) => (
+          <History
+            data={data}
+            key={index}
+            index={index}
+            onSearch={onSearch}
+            onDelete={onDelete}
+          />
+        ))}
       </div>
     </section>
   );
