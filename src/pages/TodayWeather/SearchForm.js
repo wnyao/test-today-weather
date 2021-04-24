@@ -61,7 +61,7 @@ export const SearchForm = (props) => {
 
 const validationSchema = () => {
   return Yup.object().shape({
-    city: Yup.string().required("Please input a valid city"),
-    country: Yup.string().required("Please input a valid country"),
+    city: Yup.string().required("Please input a city"),
+    country: Yup.string().required("Please input a country"),
   });
 };

@@ -19,7 +19,6 @@ export const Input = (props) => {
       id={name}
       name={name}
       className={clsx(className, "form-control", {
-        "is-valid": value && !error ? true : false,
         "is-invalid": error ? true : false,
       })}
       placeholder={placeholder}
