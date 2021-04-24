@@ -1,3 +1,7 @@
 # Today's Weather
 
-(technical test)
+(Technical test)
+
+### Reference
+
+- [Test Details PDF](./test-details.pdf)
