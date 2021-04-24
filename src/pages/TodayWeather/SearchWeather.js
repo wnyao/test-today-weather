@@ -3,7 +3,7 @@ import { SearchForm } from "./SearchForm";
 const dateFormat = require("dateformat");
 
 export const SearchWeather = (props) => {
-  const { error, weather, onSearch } = props;
+  const { error, weather, onSearch, onClear } = props;
 
   return (
     <section>
@@ -12,7 +12,7 @@ export const SearchWeather = (props) => {
       </header>
       <hr />
       <div>
-        <SearchForm onSearch={onSearch} />
+        <SearchForm onSearch={onSearch} onClear={onClear} />
         <Boundary className="my-4" error={error || (!weather && "Not found")}>
           <Weather weather={weather} />
         </Boundary>

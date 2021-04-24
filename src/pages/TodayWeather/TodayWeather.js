@@ -58,10 +58,19 @@ export const TodayWeather = () => {
     setHistory(newHistory);
   };
 
+  const onClear = () => {
+    setWeather({});
+  };
+
   return (
     <div className="d-flex flex-column h-100">
       <div className="flex-grow-1">
-        <SearchWeather error={error} weather={weather} onSearch={onSearch} />
+        <SearchWeather
+          error={error}
+          weather={weather}
+          onSearch={onSearch}
+          onClear={onClear}
+        />
       </div>
       <div className="flex-grow-2">
         <SearchHistory

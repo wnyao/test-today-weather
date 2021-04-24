@@ -6,7 +6,7 @@ import { Field } from "src/components/Form";
 import { Button } from "src/components/Buttons";
 
 export const SearchForm = (props) => {
-  const { onSearch } = props;
+  const { onSearch, onClear } = props;
 
   const formik = useFormik({
     initialValues: {
@@ -31,6 +31,11 @@ export const SearchForm = (props) => {
     isValid,
   } = formik;
 
+  const onClearLocal = () => {
+    onClear && onClear();
+    resetForm();
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="d-block d-md-flex">
@@ -52,7 +57,7 @@ export const SearchForm = (props) => {
         </Field>
         <div>
           <Button type="submit" label="Search" disabled={!isValid} />
-          <Button label="Clear" onClick={resetForm} />
+          <Button label="Clear" onClick={onClearLocal} />
         </div>
       </div>
     </form>
