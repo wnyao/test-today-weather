@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: test-today-weather
+spec: {}
+status: {} 
+---
+
+apiVersion: v1
+data:
+  REACT_APP_OPEN_WEATHER_API_KEY: N2IyYWIwMzIzYjM3NDljYjEyZWQ0NmY5YWIyODNmZmU=
+  REACT_APP_OPEN_WEATHER_API_ORIGIN: aHR0cHM6Ly9hcGkub3BlbndlYXRoZXJtYXAub3Jn
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: test-today-weather
+  namespace: test-today-weather
+  labels:
+    app: test-today-weather
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test-today-weather
+  name: test-today-weather
+  namespace: test-today-weather
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-today-weather
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test-today-weather
+    spec:
+      containers:
+      - envFrom:
+        - secretRef:
+            name: test-today-weather
+            optional: false
+        image: wnyao/test-today-weather:latest
+        name: test-today-deployment
+        ports:
+        - containerPort: 5000
+        resources: {}
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test-today-weather
+  name: test-today-weather
+  namespace: test-today-weather
+spec:
+  ports:
+  - name: 5000-5000
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: test-today-weather
+  type: NodePort
+status:
+  loadBalancer: {}
+
+
