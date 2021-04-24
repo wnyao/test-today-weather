@@ -2,7 +2,7 @@ import { Spinner } from "./Spinner";
 import { Alert } from "./Alert";
 
 export const Boundary = (props) => {
-  const { className, error, success, onClear, loading, children } = props;
+  const { className, error, success, loading, children } = props;
 
   return (
     <div className={className}>
