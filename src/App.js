@@ -1,4 +1,4 @@
-import { TodayWeather } from "src/pages/TodayWeather/TodayWeather";
+import { TodayWeather } from "src/pages/TodayWeather";
 
 const App = () => {
   return (
