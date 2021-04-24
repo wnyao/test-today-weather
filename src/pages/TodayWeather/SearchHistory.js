@@ -34,18 +34,20 @@ const History = (props) => {
   const { city, countryCode, time } = data;
 
   return (
-    <div className="d-flex align-items-center">
+    <div className="d-flex flex-wrap flex-sm-nowrap align-items-center">
       <div className="flex-grow-1">
         {index + 1}. {capitalize(city)}, {countryCode}
       </div>
-      <div className="flex-grow-1 text-end">
+      <div className="flex-grow-1 text-start text-sm-end">
         <span className="mx-2">{time && dateFormat(time, "hh:MM TT")}</span>
-        <IconButton className="mx-1" onClick={() => onSearch(data)}>
-          <MaterialIcon name="search" />
-        </IconButton>
-        <IconButton onClick={() => onDelete(index, data)}>
-          <MaterialIcon name="delete" />
-        </IconButton>
+        <span className="d-inline">
+          <IconButton className="mx-1" onClick={() => onSearch(data)}>
+            <MaterialIcon name="search" />
+          </IconButton>
+          <IconButton onClick={() => onDelete(index, data)}>
+            <MaterialIcon name="delete" />
+          </IconButton>
+        </span>
       </div>
     </div>
   );

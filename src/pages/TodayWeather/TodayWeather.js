@@ -21,7 +21,10 @@ export const TodayWeather = () => {
       if (!countryCode) throw new Error("Failed to find country code");
 
       // get weather data
-      const { body: weather } = await getCurrentWeather(city, countryCode);
+      const { body: weather } = await getCurrentWeather(
+        city.trim(),
+        countryCode.trim()
+      );
       return { weather, countryCode };
     } catch (error) {
       throw error;

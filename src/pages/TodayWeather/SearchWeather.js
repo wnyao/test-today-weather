@@ -26,7 +26,7 @@ const Weather = (props) => {
   const { country } = sys || {};
   const { temp_min, temp_max, humidity } = main || {};
   const { main: condition, description } = (weather && weather[0]) || {};
-  if (!props.weather) return null;
+  if (!weather) return null;
 
   return (
     <div>
@@ -57,12 +57,12 @@ const WeatherField = (props) => {
   return (
     <div className="row">
       {label && (
-        <div className="col-sm-6 col-md-2 px-0">
+        <div className="col-6 col-md-2 px-0">
           <small className="me-2">{label}</small>
         </div>
       )}
       {children && (
-        <div className="col-sm-6 col-md-2 px-0">
+        <div className="col-6 col-md-2 px-0">
           <small className="">{children}</small>
         </div>
       )}
