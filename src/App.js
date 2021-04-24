@@ -2,7 +2,7 @@ import { TodayWeather } from "src/pages/TodayWeather";
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="container h-100">
       <TodayWeather />
     </div>
   );

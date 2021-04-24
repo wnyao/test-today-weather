@@ -13,15 +13,19 @@ export const SearchHistory = (props) => {
       </header>
       <hr />
       <div>
-        {history.map((data, index) => (
-          <History
-            data={data}
-            key={index}
-            index={index}
-            onSearch={onSearch}
-            onDelete={onDelete}
-          />
-        ))}
+        {history.length ? (
+          history.map((data, index) => (
+            <History
+              data={data}
+              key={index}
+              index={index}
+              onSearch={onSearch}
+              onDelete={onDelete}
+            />
+          ))
+        ) : (
+          <div className="fw-bold text-center text-muted my-4">No Record</div>
+        )}
       </div>
     </section>
   );

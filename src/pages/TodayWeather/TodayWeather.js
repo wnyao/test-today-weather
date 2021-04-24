@@ -72,7 +72,7 @@ export const TodayWeather = () => {
           onClear={onClear}
         />
       </div>
-      <div className="flex-grow-2">
+      <div className="flex-grow-7">
         <SearchHistory
           history={history}
           onSearch={onSearch}
