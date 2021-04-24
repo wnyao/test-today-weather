@@ -33,7 +33,7 @@ export const SearchForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="d-block d-lg-flex">
+      <div className="d-block d-md-flex">
         <Field label="City:" error={touched.city && errors.city}>
           <Input
             name="city"

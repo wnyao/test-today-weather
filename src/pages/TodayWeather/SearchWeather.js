@@ -7,7 +7,7 @@ export const SearchWeather = (props) => {
 
   return (
     <section>
-      <header className="my-4">
+      <header className="mt-4">
         <h4 className="fw-bold">Today's Weather</h4>
       </header>
       <hr />
@@ -57,12 +57,12 @@ const WeatherField = (props) => {
   return (
     <div className="row">
       {label && (
-        <div className="col-6 col-md-2 px-0">
+        <div className="col-6 col-md-3 col-lg-2 px-0">
           <small className="me-2">{label}</small>
         </div>
       )}
       {children && (
-        <div className="col-6 col-md-2 px-0">
+        <div className="col-6 col-md-3 col-lg-2 px-0">
           <small className="">{children}</small>
         </div>
       )}

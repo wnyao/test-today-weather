@@ -8,7 +8,7 @@ export const SearchHistory = (props) => {
 
   return (
     <section>
-      <header className="my-4">
+      <header className="mt-4">
         <h4 className="fw-bold">Today's Weather</h4>
       </header>
       <hr />
@@ -34,11 +34,11 @@ const History = (props) => {
   const { city, time, weather } = data;
 
   return (
-    <div className="d-flex flex-wrap flex-sm-nowrap align-items-center">
-      <div className="flex-grow-1">
+    <div className="row align-items-center">
+      <div className="col-12 col-sm-6">
         {index + 1}. {capitalize(city)}, {weather.sys && weather.sys.country}
       </div>
-      <div className="flex-grow-1 text-start text-sm-end">
+      <div className="col-12 col-sm-6 text-start text-sm-end">
         <span className="mx-2">{time && dateFormat(time, "hh:MM TT")}</span>
         <span className="d-inline">
           <IconButton className="mx-1" onClick={() => onSearch(data)}>
@@ -49,6 +49,7 @@ const History = (props) => {
           </IconButton>
         </span>
       </div>
+      <hr className="text-muted" />
     </div>
   );
 };

@@ -59,18 +59,16 @@ export const TodayWeather = () => {
   };
 
   return (
-    <div className="container">
-      <div className="d-flex flex-column h-100">
-        <div className="flex-grow-1">
-          <SearchWeather error={error} weather={weather} onSearch={onSearch} />
-        </div>
-        <div className="flex-grow-2">
-          <SearchHistory
-            history={history}
-            onSearch={onSearch}
-            onDelete={onDelete}
-          />
-        </div>
+    <div className="d-flex flex-column h-100">
+      <div className="flex-grow-1">
+        <SearchWeather error={error} weather={weather} onSearch={onSearch} />
+      </div>
+      <div className="flex-grow-2">
+        <SearchHistory
+          history={history}
+          onSearch={onSearch}
+          onDelete={onDelete}
+        />
       </div>
     </div>
   );
