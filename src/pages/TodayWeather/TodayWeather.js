@@ -11,16 +11,16 @@ export const TodayWeather = () => {
 
   const getWeather = async ({ city, country }) => {
     try {
-      // find countries that matched input country name
+      // Find countries that matched input country name
       const { body: countries } = await findCountries(country);
       if (!countries || !countries.length)
         throw new Error("Failed to find country");
 
-      // find country code
+      // Find country code
       const { country: countryCode } = countries.reverse()[0] || {};
       if (!countryCode) throw new Error("Failed to find country code");
 
-      // get weather data
+      // Get weather data
       const { body: weather } = await getCurrentWeather(
         city.trim(),
         countryCode.trim()
@@ -35,11 +35,11 @@ export const TodayWeather = () => {
     try {
       setError("");
 
-      // get weather data
+      // Get weather data
       const { weather } = await getWeather(values);
       setWeather(weather);
 
-      // set new history
+      // Set new history
       const newHistory = {
         time: new Date(),
         weather,
