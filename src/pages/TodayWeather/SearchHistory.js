@@ -35,19 +35,7 @@ export const SearchHistory = (props) => {
 const History = (props) => {
   const { index, data, onSearch, onDelete } = props;
   const { city, time, weather } = data;
-
-  const buttons = useMemo(() => [
-    {
-      label: "Search",
-      onClick: () => onSearch(data),
-      icon: "search",
-    },
-    {
-      label: "Delete",
-      onClick: () => onDelete(data),
-      icon: "delete",
-    },
-  ]);
+  const displayTime = useMemo(() => time && dateFormat(time, "hh:MM TT"));
 
   return (
     <div className="row align-items-center">
@@ -55,20 +43,17 @@ const History = (props) => {
         <span>
           {index + 1}. {capitalize(city)}, {weather.sys && weather.sys.country}
         </span>
-        <span className="d-inline-block d-sm-none mx-2">
-          {time && dateFormat(time, "hh:MM TT")}
-        </span>
+        <span className="d-inline-block d-sm-none mx-2">{displayTime}</span>
       </div>
       <div className="col-6 text-end">
-        <span className="d-none d-sm-inline-block mx-2">
-          {time && dateFormat(time, "hh:MM TT")}
-        </span>
+        <span className="d-none d-sm-inline-block mx-2">{displayTime}</span>
         <span>
-          {buttons.map((btn) => (
-            <IconButton className="mx-1" onClick={() => btn.onClick(data)}>
-              <MaterialIcon name={btn.icon} />
-            </IconButton>
-          ))}
+          <IconButton className="mx-1" onClick={() => onSearch(data)}>
+            <MaterialIcon name="search" />
+          </IconButton>
+          <IconButton className="mx-1" onClick={() => onDelete(index)}>
+            <MaterialIcon name="delete" />
+          </IconButton>
         </span>
       </div>
       <hr className="text-muted" />
