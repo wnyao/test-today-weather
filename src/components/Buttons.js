@@ -6,10 +6,7 @@ export const Button = (props) => {
   return (
     <button
       type="button"
-      className={clsx(
-        "btn btn-primary fw-bold me-2 my-2 d-inline-flex",
-        className
-      )}
+      className={clsx("btn btn-primary fw-bold", className || "me-2 my-2")}
       {...rest}
     >
       {label || children}
