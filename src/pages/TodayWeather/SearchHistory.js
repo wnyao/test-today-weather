@@ -55,12 +55,12 @@ const History = (props) => {
         <span>
           {index + 1}. {capitalize(city)}, {weather.sys && weather.sys.country}
         </span>
-        <span className="d-inline d-sm-none mx-2">
+        <span className="d-inline-block d-sm-none mx-2">
           {time && dateFormat(time, "hh:MM TT")}
         </span>
       </div>
       <div className="col-6 text-end">
-        <span className="d-none d-sm-inline mx-2">
+        <span className="d-none d-sm-inline-block mx-2">
           {time && dateFormat(time, "hh:MM TT")}
         </span>
         <span>

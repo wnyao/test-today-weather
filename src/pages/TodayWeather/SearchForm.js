@@ -55,7 +55,7 @@ export const SearchForm = (props) => {
             onBlur={handleBlur}
           />
         </Field>
-        <div>
+        <div className="d-inline-block">
           <Button type="submit" label="Search" disabled={!isValid} />
           <Button label="Clear" onClick={onClearLocal} />
         </div>
