@@ -5,6 +5,7 @@ metadata:
   name: test-today-weather
 spec: {}
 status: {} 
+
 ---
 
 apiVersion: v1
